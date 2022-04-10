@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seção 6 - Problema 5</title>
+    <script src="beluga.js"></script>
+
+<style>
+    *{
+        margin: 0px;
+        padding: 0px;
+    }
+    body{
+        font: normal 12pt 'helvetica neue';
+        line-height: 2em;
+        color: rgb(56, 56, 56)
+    }
+    .container{
+        padding: 10px;
+    }
+    h1 {
+        font: bolder 18pt arial;
+        margin-bottom: 1em;
+    }
+    h2{
+        font: bolder 16pt arial;
+        margin-bottom: 0.5em;
+    }
+    .tabela {
+        width: 80%;
+        border-spacing: 0px;
+    }
+    th {
+        border-bottom: solid 2px rgb(56, 56, 56);
+        text-align: left;
+    }
+    td{
+        border-top: solid 1px rgb(56, 56, 56);
+        
+    }
+</style>
+</head>
+
+<body>
+    <div><h1>Seção 6 - Problema 5</h1></div>
+    <section>
+        <div class="container">
+            <h2>Media de Alunos</h2>
+            <table class="tabela js-tabela" id="tabela">
+                <thead>
+                        <tr class="t-head">
+                            <th>Nome</th>
+                            <th>Nota 1</th>
+                            <th>Nota 2</th>
+                            <th>Nota 3</th>
+                            <th>Nota 4</th>
+                            <th>Media</th>
+                        </tr>
+                    
+                </thead>
+                <tbody>
+                    <tr class="aluno">
+                        <td class="aluno-nome">David Dias</td>
+                        <td class="aluno-n1">10</td>
+                        <td class="aluno-n2">8.5</td>
+                        <td class="aluno-n3">9.5</td>
+                        <td class="aluno-n4">7.5</td>
+                        <td class="aluno-m"></td>
+                    </tr>
+                    <tr class="aluno">
+                        <td class="aluno-nome">Monica Santos</td>
+                        <td class="aluno-n1">10</td>
+                        <td class="aluno-n2">9.5</td>
+                        <td class="aluno-n3">8</td>
+                        <td class="aluno-n4">7.5</td>
+                        <td class="aluno-m"></td>
+                    </tr>
+                    <tr class="aluno">
+                        <td class="aluno-nome">Theo Jose</td>
+                        <td class="aluno-n1">10</td>
+                        <td class="aluno-n2">9.5</td>
+                        <td class="aluno-n3">9.5</td>
+                        <td class="aluno-n4">9.5</td>
+                        <td class="aluno-m"></td>
+                    </tr>
+                    <tr class="aluno">
+                        <td class="aluno-nome">Rodrigo Martins</td>
+                        <td class="aluno-n1">7</td>
+                        <td class="aluno-n2">6.5</td>
+                        <td class="aluno-n3">9.5</td>
+                        <td class="aluno-n4">8.5</td>
+                        <td class="aluno-m"></td>
+                    </tr>
+                    <tr class="aluno">
+                        <td class="aluno-nome">Marcelo Cunha</td>
+                        <td class="aluno-n1">8</td>
+                        <td class="aluno-n2">6.5</td>
+                        <td class="aluno-n3">8.5</td>
+                        <td class="aluno-n4">7</td>
+                        <td class="aluno-m"></td>
+                    </tr>
+                    <tr class="aluno">
+                        <td class="aluno-nome">Victor Junior</td>
+                        <td class="aluno-n1">10</td>
+                        <td class="aluno-n2">9.5</td>
+                        <td class="aluno-n3">6.5</td>
+                        <td class="aluno-n4">8.5</td>
+                        <td class="aluno-m"></td>
+                    </tr>
+                    <tr class="aluno">
+                        <td class="aluno-nome">Pedro Almodovar</td>
+                        <td class="aluno-n1">7</td>
+                        <td class="aluno-n2">4.5</td>
+                        <td class="aluno-n3">3.5</td>
+                        <td class="aluno-n4">7.5</td>
+                        <td class="aluno-m"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+    <script>
+    
+        (function(){
+            var trs = document.querySelectorAll('.aluno')
+            var x = 0;
+            
+            while (trs[x]){
+                var linhaAluno = trs[x];
+             //   console.log(linhaAluno);
+
+                var tds = linhaAluno.querySelectorAll('td');
+                console.log(tds);
+                var notas = recuperarNumerosDeColunas(tds);
+                /* metodo trabalhososo, que pode ser subsituido por array
+                n1 = peganota(tds[1]);
+                n2 = peganota(tds[2]);
+                n3 = peganota(tds[3]);
+                n4 = peganota(tds[4]);
+                
+                media = calculaMedia(n1, n2, n3, n4);
+                */
+                // calculaMedia.call(this, n1, n2); - igual em cima.. 
+                
+                var media = calculaMedia.apply(this, notas);
+
+                linhaAluno.querySelector('.aluno-m').textContent = media;
+                
+                x++;
+            }
+
+            function recuperarNumerosDeColunas(tds){
+                var x = 0;
+                var arr=[];
+                while ( tds[x]){
+                    if (!isNaN(tds[x].textContent) && tds[x].textContent !== ''){
+                        arr.push(parseFloat(tds[x].textContent));
+                    }
+                    x++
+                }
+                return arr;
+            }
+            
+        })();
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problema 1</title>
+</head>
+<body>
+    <h1>Problema 1</h1>
+    <h3>Mostrar na tela uma (div com uma #msg) de boas vinda. Ex: Bem vindo David.</h3>
+    <p>O nome do usuário pode ser uma variável.</p>
+    <hr>
+    <input type="text" id="nome" class="nome">
+    <input type="button" value="Vai!" class="btnok" id="btnok">
+    <div class="txtresp" id="txtresp">
+
+    </div>
+
+    <script>
+        var msg = document.querySelector('input', '.nome');
+        var rest = document.querySelector('div', '.txtresp');
+        document.getElementById('btnok').addEventListener('click', responde);
+        function responde(){
+            rest.innerHTML = `<p>Seja super bem vindo: <strong>${msg.value}</strong></p>`
+        }   
+    </script>
+</body>
+</html>

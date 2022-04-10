@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 05</title>
+</head>
+<body>
+    <h1>Aula 05 - Inserindo dados na tabela</h1>
+    <h2>Comando DDL</h2>
+    <p><strong>DDL</strong> é DATA Definition Language. Comandos para definir bancos de dados, tabelas e afins. O comando CREATE TABLE, CREATE DATABASE.</p>
+    <p><strong>DML</strong> - Data Manipulation Language - O comando <strong>INSERT</strong>  que usaremos hoje é DML, ou seja, manipulamos os dados com ele.</p>
+    <PRe><code>
+        INSERT INTO pessoas
+        (id, nome, nascimento, sexo, peso, altura, nacionalidade)
+        VALUES
+        ('1', 'Godofredo', '1980-07-10', 'M', '78.5', '1.80', 'Brasil');
+    </code></PRe>
+    <p>Também podemos criar a tabela sem especificar o ID conforme abaixo</p>
+    <pre><code>
+        INSERT INTO pessoas
+        (nome, nascimento, sexo, peso, altura, nacionalidade)
+        VALUES
+        ('Monica Santos', '1982-11-19', 'F', '76.5', '1.75', 'Brasil');
+    </code></pre>
+    <p>Veja os dados da tabelas com o comando <strong>SELECT</strong></p>
+    <pre><code>
+        SELECT * FROM pessoas
+        +----+---------------+------------+------+-------+--------+---------------+
+        | id | nome          | nascimento | sexo | peso  | altura | nacionalidade |
+        +----+---------------+------------+------+-------+--------+---------------+
+        |  1 | Godofredo     | 1980-07-10 | M    | 78.50 |   1.80 | Brasil        |
+        |  2 | Monica Santos | 1982-11-19 | F    | 76.50 |   1.75 | Brasil        |
+        +----+---------------+------------+------+-------+--------+---------------+
+    </code></pre>
+    <p>Não precisa dizer as colunas se voce se seguir as ordens e para os campos auto preenchidos, apenas preencha com <strong>default</strong></p>
+    <pre><code>
+        INSERT INTO pessoas
+        VALUES
+        (DEFAULT, 'David Dias', '1980-07-10', 'M', '99.5', '1.80', default),
+        (DEFAULT, 'Theo Jose', '2006-05-31', 'M', '50.5', '1.50', default),
+        (DEFAULT, 'Carlos Augusto Oswaldo', '1986-07-10', 'M', '115.5', '1.92', default);
+
+        SELECT * FROM pessoas;
+        +----+------------------------+------------+------+--------+--------+---------------+
+        | id | nome                   | nascimento | sexo | peso   | altura | nacionalidade |
+        +----+------------------------+------------+------+--------+--------+---------------+
+        |  1 | Godofredo              | 1980-07-10 | M    |  78.50 |   1.80 | Brasil        |
+        |  2 | Monica Santos          | 1982-11-19 | F    |  76.50 |   1.75 | Brasil        |
+        |  3 | David Dias             | 1980-07-10 | M    |  99.50 |   1.80 | brasil        |
+        |  4 | Theo Jose              | 2006-05-31 | M    |  50.50 |   1.50 | brasil        |
+        |  5 | Carlos Augusto Oswaldo | 1986-07-10 | M    | 115.50 |   1.92 | brasil        |
+        +----+------------------------+------------+------+--------+--------+---------------+
+    </code></pre>
+    <p>
+        Anterior: <a href="aula04.html">Aula 04</a>
+    </p>
+</body>
+</html>

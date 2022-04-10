@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secao 5 :: Funções</title>
+</head>
+<body>
+    <h1>Seção 5 :: Funções em JavaScript</h1>
+    <h2>13 - Funções auto executáveis</h2>
+    <h3>Variáveis locais e globais</h3>
+    <p>Toda variável criada sem o var se torna global e será usada
+        fora da função. Isso não é legal. Toda função deve ter 
+        variáveis locais, criadas sempre com o var. 
+    </p>
+    <pre>
+        <code>
+            function variaveis(){
+                var x = 10;
+                var y = 20;
+                console.log (x + y)
+            }
+            variaveis();
+            console.log(y);
+        </code>
+        <p><em> A variável retornará um erro nesse contexto</em></p>
+    </pre>
+    <h3>Funções autoexecutáveis</h3>
+    <p>Para uma função auto executável, basta adicionar a função entre parenteses, dessa forma não é preciso mais chama-la</p>
+    <pre>
+        <code>
+            (function variaveis(){
+                var x = 10;
+                var y = 20;
+                console.log (x + y)
+            })()
+        </code>
+    </pre>
+    <h3>Parâmetros e o parametro arguments</h3>
+    <p>Voce já sabe passar paraâmetros, então apenas decore o parâmtro <strong>arguments</strong>. Arguments recebe os parametros e transforma um array. Voce pode acessar cada valor passado como argumentos percorrendo o array</p>
+    <pre>
+        <code>
+            function variaveis(qualquernomenaoimporta){
+                var cont = 0
+                var x = 0
+                while (cont < arguments.length){
+                    x += arguments[cont];
+                    cont++;
+                }
+                console.log(x)
+            }
+            variaveis(10,30, 20,2,10,5)
+        </code>
+        <em>forma alternativa</em>
+        <code>
+            function variaveis(qualquernomenaoimporta){
+                var cont = 0
+                var x = 0
+                while (arguments[cont]){
+                    x += arguments[cont];
+                    cont++;
+                }
+                console.log(x)
+            }
+            variaveis(10,30, 20,2,10,5)
+        </code>
+    </pre>
+    
+    <script>
+        function variaveis(qualquernomenaoimporta){
+            var cont = 0
+            var x = 0
+            while (arguments[cont]){
+                x += arguments[cont];
+                cont++;
+            }
+            console.log(x)
+        }
+        variaveis(10,30, 20,2,10,5)
+        
+        
+    </script>
+</body>
+</html>

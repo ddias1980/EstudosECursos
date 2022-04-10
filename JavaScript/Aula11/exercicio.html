@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nacionalidade</title>
+    <style>
+        body{
+            background-color: rgb(230, 224, 255);
+            font: normal 14px arial;
+            color: rgb(75, 75, 75);
+        }
+        input {
+            height: 25px;
+            border: darkgray solid 1px;
+            border-radius: 4pt;
+        }
+        input:focus {
+            background-color: #ffffa8;
+        }
+        input[type=button], [type=submit] {
+            border: solid 1px rgb(161, 159, 159);
+            border-radius: 0px;
+            height: 25px;
+            width: 100px;
+            background-color: #b3e76e;
+            color: black;
+        }
+        div#res {
+            background-color:  cornsilk;
+            border: solid black;
+            border-width: 1px;
+            height: 100px;
+            padding: 10px;
+            margin-top: 35px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Teste de Nacionalidade</h1>
+    <label for="inputnac">Sua Nacionalidade</label>
+    <input type="text" name="inputnac" id="inputnac">
+    <input type="button" value="Confira" onclick="conferirNac()">
+
+    <div id="res"></div>
+
+    <script>
+        function conferirNac() {
+            nac = document.getElementById('inputnac').value
+            res = document.getElementById('res')
+            res.innerHTML = `<p>Conforme sua reposta. Voce vem do <strong>${nac} :-)</strong></p>`
+            if (nac.toUpperCase() == 'BRASIL'){
+                res.innerHTML += '<p>Isso quer dizer que voce é  <strong>Brasileiro</strong>!! É ótimo ver um conterraneo</p>'
+            } 
+            res.innerHTML += '<p>Seja bem vindo ao nosso pais.<p>'
+        }
+    </script>
+</body>
+</html>

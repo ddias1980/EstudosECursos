@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 04</title>
+</head>
+<body>
+    <h1>Aula 04 - Criando BD e usando constraint</h1>
+    <h2>Usando constraint na criação do BD</h2>
+    <p>Constraint são os parâmetros que são enviados após o comando básico de criação de banco.</p>
+    <p>No exemplo, vamos usar constraint para criar um banco com codificação UTF-8, dessa forma, ele irá entender os caracteres acentuados.</p>
+    <pre>
+        <code>
+            CREATE DATABASE cadastro DEFAULT CHARACTER SET utf8 DEFAULT COLLATE utf8_general_ci;
+        </code>
+    </pre>
+    <h2>Criação de tabelas usando constraint</h2>
+    <pre>
+        <code>
+            create table pessoas (
+            nome varchar(30) not null,
+            nascimento date,
+            sexo enum('M', 'F'),
+            peso decimal (5,2),
+            altura decimal (3,2),
+            nacionalidade varchar(20) <abbr title="Outra constraint, se o valor não for colocado, ele lança o brasil">default 'brasil'</abbr>
+            )  default charset = utf8;
+        </code>
+    </pre>
+    <p>
+        Com o comando abaixo, cria-se a mesma tabelas, mas usando a constraint primary key que serve para não repetir valores. 
+    </p>
+    <pre>
+        <code>
+            create table pessoas (
+            id int <strong>not null auto_increment,</strong>
+            nome varchar(30) not null,
+            nascimento date,
+            sexo enum('M', 'F'),
+            peso decimal (5,2),
+            altura decimal (3,2),
+            nacionalidade varchar(20) default 'brasil',
+            <strong>primary key(id)</strong>
+            )  default charset = utf8;
+        </code>
+    </pre>
+    <p>Proximo: <a href="aula05.html">Aula 05</a></p>
+
+    
+</body>
+</html>

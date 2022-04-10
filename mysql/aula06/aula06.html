@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 06</title>
+</head>
+<body>
+    <div>
+    <h1>Aula 06</h1>
+        <h2>Alterando a estrutura da tabela</h2>
+        <h3>Adicionando nova coluna</h3>
+        <pre><code>
+            ALTER TABLE pessoas ADD COLUMN profissao VARCHAR (10);
+        </code></pre>
+        <h3>Removendo uma coluna, use <strong>DROP</strong></h3>
+        <pre><code>
+            ALTER TABLE pessoas DROP COLUMN profissao;
+        </code></pre>
+        <h3>Adicionando uma coluna na ordem certa</h3>
+        <p>No exemplo, após a coluna nome, basta usar <strong>AFTER</strong></p>
+        <pre><code>
+            ALTER TABLE pessoas ADD COLUMN profissao VARCHAR(10) AFTER nome;
+        </code></pre>
+        <p><strong>IMPORTANTE:</strong>Não existe BEFORE, então se quiser colocar uma coluna no começo da tabela, usa-se <strong>FIRST</strong></p>
+        <pre><code>
+            ALTER TABLE pessoas ADD COLUMN profissao VARCHAR(10) FIRST
+        </code></pre>
+        <h3>Alterando a estrutura de uma coluna</h3>
+        <p>Troque ADD por <strong>MODIFY</strong></p>
+        <PRE>
+            <CODE> 	ALTER TABLE pessoas MODIFY COLUMN profissao VARCHAR(30); </CODE>
+        </PRE>
+        <h3>Modficando o nome da coluna</h3>
+        <p>E tipos primitivos, usa-se <strong>CHANGE</strong></p>
+        <pre><code>
+            ALTER TABLE pessoas CHANGE COLUMN profissao prof varchar(20);
+        </code></pre>
+        <h3>Renomear a table inteira</h3>
+        <p>Usa-se <strong>RENAME TO</strong></p>
+        <pre><code>
+            ALTER TABLE pessoas RENAME TO clientes;
+        </code></pre>
+        <h3>Adicionando uma coluna de chave primária</h3>
+        <p>Não dá pra adicionar na hora, primeiro, tem que adicionar a coluna e depois a chave primária</p>
+        <pre><code>
+            ALTER TABLE cursos ADD COLUMN id int FIRST;
+            ALTER TABLE cursos ADD PRIMARY KEY (id);
+            ALTER TABLE cursos CHANGE COLUMN id id int not null auto_increment;
+        </code></pre>
+        <h3>Apagando a tabela</h3>
+        <pre><code>
+            DROP TABLE cursos;
+        </code></pre>
+    </div>
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercícios Aula 10</title>
+    <style>
+        body{
+            background-color: cornsilk;
+            font: normal 12pt arial;
+            color: #555555;
+        }
+        h1{
+            color: red;
+        }
+        input {
+            width: 150px;
+            height: 25px;
+            padding: 5px;
+            border: 1px solid silver;
+            border-radius: 4px;
+            margin: 10px;
+        }
+        input[type=submit], input[type=button], input[type=reset] {
+            font: normal 12pt arial;
+            background-color: rgb(0, 155, 34);
+            border-radius: 0px;
+            height: 40px;
+            color: white;
+
+        }
+       input:focus {
+           background-color: thistle;
+       }
+       div#prodLancado {
+           margin-top: 30px;
+           padding: 5px;
+           height: 300px;
+           border-style: solid;
+           border-width: 1px;
+       }
+       table, tr {
+           border-collapse: collapse;
+           border: 1px solid black;
+           width: 100%;
+           height: 30px;
+       }
+       table, td{
+           padding: 5px;
+       }
+    </style>
+</head>
+<body>
+    <h1>Cadastro Produtos</h1>
+    <p>Entre com o produto abaixo</p>
+    <input type="text" name="prod" id="prod" placeholder="Produto">
+    <input type="text" name="pn" id="pn" placeholder="Part Number">
+    <input type="number" name="qtde" id="qtde" placeholder="Quantidade">
+    <input type="text" name="preco" id="preco" placeholder="Preço"><br/>    
+    <input type="button" value="Cadastrar >>" onclick="lancaproduto()">
+    <table border="1">
+        <tr>
+            <td>Produto</td>
+            <td>PN</td>
+            <td>Qtde</td>
+            <td>Preço</td>
+            <td><strong>TOTAL</strong></td>
+        </tr>
+        <tr>
+            <td id="linhaprod"></td>
+            <td id="linhapn"></td>
+            <td id="linhapreco"></td>
+            <td id="linhaqtde"></td>
+            <td id="total"></td>
+        </tr>
+    </table>
+
+    <script>
+        //criei variaveis recebendo o conteudo de cada coluna da tabela
+        var rlinhaprod = document.getElementById('linhaprod')
+        var rlinhapn = document.getElementById('linhapn')
+        var rlinhapreco = document.getElementById('linhapreco')
+        var rlinhaqtde = document.getElementById('linhaqtde')
+       
+        function lancaproduto(){ 
+            // as variáveis criadas para receber o conte[udo de cada coluna da tabela
+            // receberão o valor de cada input. Produto e PN serão convertidos em Maiusculas
+            rlinhaprod.innerText = document.getElementById('prod').value.toUpperCase()
+            rlinhapn.innerText = document.getElementById('pn').value.toUpperCase()
+            // variaveis n1 e n2 são criadas para recber o valor de qtde e preco convertidos
+            // para numeros. Poderia fazer sem criar a variável, mas a soma abaixo geraria uma
+            //linha enorme
+            n1 = document.getElementById('qtde').value
+            n2 = Number(document.getElementById('preco').value)
+            resultado = n1 * n2 // a soma das duas variáveis
+            // já que eu criei a variável, então vou usá-las para preencher a 
+            // variavel de preco e qutde 
+            rlinhapreco.innerText = Number(n1)
+            rlinhaqtde.innerText = Number (n2).toFixed(2)//.replace('.',',')
+            // aqui, fiz direto sem uso de variáveis. 
+            // a coluna do total na tabela receberá o valor de resultado
+            document.getElementById('total').innerText = resultado.toLocaleString('pt-BR', {style:'currency', currency:'BRL'})
+
+        }
+    </script>
+</body>
+</html>

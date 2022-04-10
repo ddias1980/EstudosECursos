@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modelo de Tabela</title>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,500;0,700;1,300;1,500;1,700&display=swap" rel="stylesheet">
+    <style>
+        *{margin: 0; padding: 0;}
+
+        body{
+            background-color: #e7eafc;
+            font: lighter 11pt Ubuntu, sans-serif;
+            line-height: 1.5em;
+        }
+        h1{
+            font-weight: bolder;
+            font-size: 18pt;
+            color: #4b4b4b;
+            margin-bottom: 1em;
+        }
+        h2{
+            font-weight: bold;
+            font-size: 14pt;
+            color: #4b4b4b;
+            margin-bottom: .5em;
+        }
+        .container{
+            width: 85%;
+            margin: 20px auto;
+            padding: 10px;
+            background-color: white;
+            box-shadow: 0px 30px 25px silver;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+        }
+        table caption{
+            font: bold 12pt sans-serif;
+            margin-bottom: 1em;
+            color: #4b4b4b
+        }
+        table tr td, th{
+            padding: 5px;
+        }
+        table th{
+            background-color: teal;
+            color: white;
+            font-weight: bold;
+        }
+        table .table-id {
+            width: 2em;
+        }
+        table .table-produto{
+            width: 50em;
+        }
+        table .table-qtde{
+            width: 4em;
+        }
+        table .table-preco, .table-total, .valor{
+            width: 7em;
+            text-align: right;
+        }
+        table tbody tr{
+            border-bottom: solid 1px #4b4b4b;
+        }
+        table tfoot tr{
+            border-top: solid 2px #4b4b4b;
+            font-weight: bold;
+        }
+        .tabela-vazia{
+            color: rgb(185, 185, 185);
+            text-align: center;
+            margin: auto;
+            display: none;
+        }
+        .tabela-vazia img{
+            filter: saturate(15%) opacity(50%);
+            width: 30%;
+            margin: auto;
+        }
+       
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Pagina de modelo</h1>
+        <h2>Tabela Modelo</h2>
+        <div class="areatabela">
+            <table class="tabela">
+                <caption>Produtos</caption>
+                <thead class="tabela-head">
+                    <tr>
+                        <th class="table-id">ID</th>
+                        <th class="table-produto">Produto</th>
+                        <th class="table-qtde">Qtde</th>
+                        <th class="table-preco">Preco</th>
+                        <th class="table-total">Total</th>
+                    </tr>
+                </thead>
+                <tbody class="tabela-body">
+                    <tr>
+                        <td>1</td>
+                        <td>HD SAS 300GB</td>
+                        <td>4</td>
+                        <td class="valor">25,00</td>
+                        <td class="valor">100,00</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Memoria 16GB</td>
+                        <td>10</td>
+                        <td class="valor">320,00</td>
+                        <td class="valor">3.200,00</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>SSD 256GB</td>
+                        <td>5</td>
+                        <td class="valor">380,00</td>
+                        <td class="valor">1.900,00</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Placa de Rede Dual</td>
+                        <td>10</td>
+                        <td class="valor">90,00</td>
+                        <td class="valor">900,00</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>Case para HD 3.5"</td>
+                        <td>20</td>
+                        <td class="valor">80,00</td>
+                        <td class="valor">1.600,00</td>
+                    </tr>
+                </tbody>
+                <tfoot class="tabela-foot">
+                    <tr>
+                        <td colspan="4">Total</td>
+                        <td class="valor">R$ 0,00</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div><!--area tabela-->
+       <div class="tabela-vazia">
+            <h1>Não há nada por aqui</h1>
+            <img src="../img/Ip_oi.png" alt="ip dando oi">
+           <h2>Voce ganhou um descanso, volte mais tarde</h2>
+       </div>
+    </div><!-- container-->
+</body>
+</html>

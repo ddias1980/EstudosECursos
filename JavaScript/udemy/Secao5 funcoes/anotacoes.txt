@@ -1,0 +1,15 @@
+Voce pode usar a String 'use strict' para evitar que se façam códigos aceitos porém fora das boas praticas
+
+Sempre criar variáveis com var ou let ou const, variáveis sem isso se tornam globais e continuam vivas fora da função
+
+Arguments é um array bonito que pode ser usado em funções que enviam parâmetros sem quantidade certa. 
+
+  function soma(arg){
+    var result = 0
+    for (var i in arguments){
+    result += arguments[i]
+    }
+    console.log(result)
+  }
+
+  soma(3,2)

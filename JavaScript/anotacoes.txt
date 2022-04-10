@@ -1,0 +1,228 @@
+CSS Anotações Gerais. 
+Placeholder - Dica de preenchimento para um input
+
+
+Aula 06
+
+Conversões de variáveis. 
+convertendo em numeros
+    Number.parseInt()
+    Number.parseFloat()
+    ou pode se usar apenas Number e o Java faz o resto
+    Number()
+Convertendo em String 
+    String()
+    ou utilizar variavel.toString()
+    exemplo var s = 2; s.toString();
+
+Concatenações 
+    é possivel usar variáveis concatenadas usando o sinal de + como já é conhecido
+    ex: var s = "oi" var x = "2"; "o valor de s é " +  s + " e o valor de x é " +;
+
+    Usando PlaceHolders, podemos substitui a soma por 
+    ${variavel}
+    ex: var s = "oi" var x = "2"; `o valor de S é ${s} e de X é ${x}`;
+
+    para usar PlaceHolders, a String precisa ser escrita com Crases (`)
+
+Atributos para Strings
+lenght = quantos caracteres a String tem
+toUpperCase = String todas em maiuscula
+toLowerCase = String todas em minúsculas 
+ex: 
+    var s = "ola"
+    s.lenght // vai responder 3 - Ele conta os espaços tambem
+    s.toUpperCase() // vai resoponder OLA 
+    s.toLowerCase() // vai responder ola 
+
+Atributos para Number
+toFixed() // Controla o numero de casas decimais
+ex:
+    n = 2.5; n.toFixed(2) // retorno 2.50
+replace() // substitui caracteres, podemos usar para trocar ponto por virgula
+ex:
+    n = 2.5; n.toFixed(2).replace('.',','); // retorna 2,50
+toLocaleString() // converte um valor numerico conforme localidade
+ex: convertendo para moeda
+    n = 1050;
+    n.toLocaleString('pt-BR',{style: 'currency', currency:'BRL'}) // retonra R$ 1.050,00
+    n.toLocaleString('pt-BR',{style: 'currency', currency:'USD'}) // retorna US$ 1.050,00
+
+--------------------------------------------------------------------------------------
+
+Exercícios. 
+Solicite o nome do produto, codigo, preco 
+Exiba a entrada com o nome do produto e seu codigo separados por tracos, em maiusculas e preco em real. 
+A pagina deve estar formatada com o titulo em H1 Entradas de produtos e os produtos devem aparecer abaixo do titulo
+
+--------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------
+
+Aula 07 
+Operadores. 
+
+A ordem de operação é a mesma da aritimetica 
+% é o resto da divisão. 
+** é potencia
+
+n = n + 1 // a variável recebe um valor a mais. Pode ser simplificada por 
+n += 1 
+
+O mesmo vale para todas as operações em que a variável receber valores próprios
+n -= 1
+n *= 2
+n **= 2 e assim por diante. 
+
+Incrementos de 1 podem ser ainda mais simples. 
+n++ // incrementa um 
+n-- // decrementa um 
+A resposta do prompto mostra o valor anterior à mudança. 
+Para ver a resposta em tempo real, pode-se usar um pré decremento / incremento 
+++n // incrementa + 1 e exibe o resultado
+--n // decrementa -1 e exibe o resultado.
+
+Aula 08
+Operadores relacionais
+Para validar igualdade, usamos o operador ==
+Para validar igualdade e Tipo de dados, usa o operador === 
+Ex
+5 == 5 // retorna true
+5 == '5' // retorna true
+5 === '5' // retorna false (por que o type é diferente) 
+
+! - negação 
+&& -- conjunção 
+|| disjunção 
+
+! Não = é um operador unário, depois dele é true ou false nada mais. 
+&& - é o operador E 
+|| é o operador OU
+
+Ordem de precedencia. 
+1- () ** /
+2- > < >=
+3- !
+4- &&
+5- ||
+
+Operador ternário
+Se chama ternário por que tem 3 partes. 
+Teste verdadeiro e Falso
+? - o que vai acontecer quando o teste for verdadeiro
+: - o que vai acontecer quando o teste for falso
+
+Esse é um teste muito legal pq praticamente ele resume um if com direito a then 
+Resumindo 
+Considere a variável media = 5.5 
+Se a media for menor que 7 (media < 7), então aprovado(?'aprovado'), senão reprovado(:'reprovado')
+
+Media < 7 ? 'Aprovado' : 'reprovado' // assim mesmo, sem ponto e virgula ,parágrafos, nada
+
+Olha esse exemplo bem interessante, onde atribuímos valor a uma variável conforme o resultado de x. 
+Se x % 2 for igual a 0 então a variável res vale 5, do contrário, irá valer 9 
+
+var res = x % 2 == 0 ? 5 : 9 
+
+Esse exemplo também é interessante: lança o valor da idade e cria uma variável r conforme a idade, se menor ou maior de 18 anos. 
+var idade = 19 
+var r = idade <= 18 ? 'MENOR' : 'MAIOR' // retorna MAIOR por que idade vale 19 
+
+Aula 09 e 10 
+DOM (Document Object Model)
+Arvore DOM
+é a arvore hierarquica que a gente pode construir 
+
+window
+^
+Document Location history
+^
+html
+^               ^
+head            body
+^    ^          ^   ^   ^       ^  
+meta title      h1  p   strong  div
+
+Com base na arvore, podemos usar o DOM para pegar elementos do site 
+
+exemplo:
+var x = window.document.getElementById(p)
+var y = window.document.getElementsByTagName('p')[0]
+
+--------------------------------------------------------------------------------------
+Exercício
+Faça um página com formulário para receber o seguinte cadastro
+Nome do Produto, PN, qtde, preço
+
+Exiba a informação em uma DIV com o Total do valor multiplicando a quatde por preço
+
+--------------------------------------------------------------------------------------
+
+Aula 14
+While estrutura
+while (c <= 6) {
+    console.log(`mensagem ${c}... `)
+    c++
+}
+
+Do while estrutura
+do   {
+    console.log(`uooowwwllllll exeuctei com o do: ${c}`)
+    c++
+} while (c <= 10 )
+
+
+--------------------------------------------------------------------------------------
+Aula 15 - Vetores
+
+declarando a variavel 
+var num = [] // também pode ser let
+
+vendo o valor da variável 
+console.log('${num}')
+
+Atribuindo valor à variável. 
+Na criação 
+var num = ['2', '5', '6']
+
+ATENÇÃO. 
+cuidado, se atribuir valor a um vetor usando o clássico num = 'valor', ele NÃO ADICIONA.
+O vetor vai ser sobrescrito se tornanado uma variável simples. 
+
+Adicionando valor a um vetor. 
+num[3] = 'sp'
+
+Assim precisa saber qual é a posição que se vai colocar. 
+O objeto push resolve isso adicionando sempre o valor ao final do vetor. 
+num.push('0')
+    Se a variável não for um vetor, não dá certo. 
+
+Para ordenar um vetor, use 
+num.sort()
+
+Para saber o tamanho do vetor
+num.lenght
+    náo tem parentes mesmo, é um método. 
+
+num = ['5', '8', '4']
+console.log (`Vamos usar o FOR para percorrer o vetor`)
+/*
+for (i=0; i < num.length; i++){
+    console.log(`Estamos atravessando o valor ${i} do Vetor: ${num[i]}`)
+}*/ 
+
+Essa versão completa de for, percorre o vetor.. tem essa versão mais facil para percorrer o vetor. 
+for (var cont in num){
+    console.log(`Valor Número: ${cont}: ${num[cont]}`)
+}
+
+O indexOf procura um valor e mostra a chave, a posicão em que ele se encontra
+exemplo
+let num = [5, 8, 2, 9, 3]
+
+num.push(1)
+console.log(num)
+console.log(`O vetor tem ${num.length} posições`)
+console.log(`O primeiro valor do vetor é ${num[0]}`)
+let pos = num.indexOf(8)
+console.log(`O valor 8 esdtá na posicao ${pos}`)
+

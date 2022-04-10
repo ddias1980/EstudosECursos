@@ -1,0 +1,126 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+body {
+    font: normal 12pt 'arial narrow';
+    line-height: 1.5em;
+    background-color: #F1F2F6;
+    color: #292F36;
+}
+a {
+    color: #292F36;
+}
+header{
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    z-index: 2;
+}
+ header .logo {
+     position: fixed;
+     z-index: 5;
+     top: 5px;
+     left: 10px;
+ }
+ul{
+    position: relative;
+    background-color: #B82519;
+    margin: 0px;
+    padding: 0px;
+    text-align: center;
+}
+ul li{
+    display: inline-block;
+    min-width: 200px;
+
+}
+ul li a{
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    padding: 15px;
+    display: block;
+    width: 150px;
+}
+ul li:hover{
+    background-color: rgba(255, 255, 255, 0.5);
+}
+ul ul {
+    position: absolute;
+    min-width: 200px;
+    display: none;
+}
+ul ul li{
+    display: block;
+}
+ul li:hover ul{
+    display: block;
+}
+#menu-superior{
+    background-color: #5D737E;
+    position: fixed;
+    padding: 5px;
+    top: 54px;
+    width: 100%;
+    display: block;
+    z-index: 0;
+    
+}
+.menucentro{
+    margin: 0px auto;
+    position: relative;
+    background-color: rosybrown;
+    z-index: 10;
+    width: 50%;
+}
+.aolado{
+    position: relative;
+    float: left;
+    margin-right: 20px;
+}
+.selecaomultipla{
+    width: 200px;
+    
+}
+.selectbox{
+    position: relative;
+}
+.selectbox select{
+    width: 100%;
+    font-weight: bold;
+}
+.overselect{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+.checkbox{
+    border: 1px black solid;
+    display: none;
+}
+.checkbox label {
+    display: block;
+    
+}
+
+.checkbox label:hover{
+    background-color: red;
+}
+
+section {
+    height: 700px;
+    clear: both;
+    margin-top: 100px;
+}
+
+table{
+    width: 100%;
+    border-collapse: collapse;
+}
+table td, tr, th{
+    border: 1px solid black;
+    
+}

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seção 7 - Objetos</title>
+</head>
+<body>
+    <h1>Seção 7 - Objetos</h1>
+    
+    <script>
+
+        (function() {
+            'use strict'
+            window.Caneta = function(preco, cor){
+                this.preco = preco || 1;
+                var cor = cor || 'red';
+                this.mudaCor = function(color){
+                    if (color !== 'blue' && color !== 'black' && color !== 'red'){
+                        console.log('Erro na execução de função Caneta: Apenas valores "blue", "black" e "red" são aceitos')
+                        return
+                    } 
+                    cor = color;
+                    
+                }
+                this.pegaCor = function(){
+                    return cor;
+                }
+            
+        }
+
+        var caneta1 = new Caneta(2);
+    })(window)
+
+    </script>
+</body>
+</html>

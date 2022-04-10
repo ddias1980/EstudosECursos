@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculo de IMC</title>
+    <style>
+        table, td{
+            border: solid 1px black;
+            border-spacing: 0;
+        }
+        table tr.destaque {
+            background-color: red;
+            color: white;
+            font: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Exercício : Calculo do IMC</h1>
+    <h2>Calculo IMC</h2>
+    <input type="number" id="peso" class="peso" placeholder="Peso">
+    <input type="number" id="altura" class="altura" placeholder="altura">
+    <input type="button" id="btnok" class="btn" value="Calcular">
+    <div class="resp" id="resp"></div>
+    <table>
+        <tr>
+            <td>Classificação</td>
+            <td>IMC</td>
+        </tr>
+        <tr class="table-m-abaixo tr-table">
+            <td>Muito abaixo do peso</td>
+            <td>16 a 16,9Kg/m<sup>2</sup></td>
+        </tr>
+        <tr class="table-abaixo tr-table">
+            <td>Abaixo do peso</td>
+            <td>17 a 18,4Kg/m<sup>2</sup></td>
+        </tr>
+        <tr class="table-normal tr-table">
+            <td>Peso normal</td>
+            <td>18,5 a 24,9Kg/m<sup>2</sup></td>
+        </tr>
+        <tr class="table-acima tr-table">
+            <td>Acima do peso</td>
+            <td>25 a 29,9Kg/m<sup>2</sup></td>
+        </tr>
+        <tr class="table-obesidade-g1 tr-table">
+            <td>Obesidade Grau 1</td>
+            <td>30 a 34,9Kg/m<sup>2</sup></td>
+        </tr>
+        <tr class="table-obesidade-g2 tr-table">
+            <td>Obesidade Grau 2</td>
+            <td>35 a 40Kg/m<sup>2</sup></td>
+        </tr>
+        <tr class="table-obesidade-g3 tr-table">
+            <td>Obesidade Grau 3</td>
+            <td>Maior que 40Kg/m<sup>2</sup></td>
+        </tr>
+        
+    </table>
+
+    <script>
+        var peso = document.getElementById('peso');
+        var altura = document.getElementById('altura');
+        var divResp = document.getElementById('resp');
+        var calcular = document.getElementById('btnok')
+        calcular.addEventListener('click', calculaimc);
+
+        function calculaimc(){
+            function imc(parPeso, parAltura){
+                parPeso = peso.value;
+                parAltura = altura.value;
+                return parPeso / (parAltura**2);
+            }
+
+            function limpa(){
+                peso.value = '';
+                altura.value = '';
+                peso.focus();
+            }
+
+            (function destaca(){
+                divResp.innerHTML = `<br />imc: ${imc().toFixed(2)}`;
+                var lmpa = document.getElementsByClassName('tr-table');
+                for (i in lmpa){
+                    lmpa[i].classList.remove('destaque');
+                }
+                if (imc() <= 16.9){
+                    document.getElementsByClassName('table-m-abaixo')[0].classList.add('destaque');
+                } else if (imc() <= 18.4){
+                    document.getElementsByClassName('table-abaixo')[0].classList.add('destaque');
+                } else if (imc() <= 24.9){
+                    document.getElementsByClassName('table-normal')[0].classList.add('destaque');
+                } else if (imc() <= 29.9){
+                    document.getElementsByClassName('table-acima')[0].classList.add('destaque');
+                } else if (imc() <= 34.9){
+                    document.getElementsByClassName('table-obesidade-g1')[0].classList.add('destaque');
+                } else if (imc() <= 40){
+                    document.getElementsByClassName('table-obesidade-g2')[0].classList.add('destaque');
+                } else {
+                    document.getElementsByClassName('table-obesidade-g3')[0].classList.add('destaque');
+                }
+            })();
+            
+
+        }
+    </script>
+    
+    
+</body>
+</html>

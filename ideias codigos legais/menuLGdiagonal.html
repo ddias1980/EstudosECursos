@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Diagonal</title>
+    <style>
+        h1{
+            font: bolder 18pt arial;
+            text-align: center;
+            line-height: 50px;
+        }
+        div{
+            font: normal 12pt arial;
+            margin: 20% auto 0px auto;
+            width: 80%;
+            text-align: center;
+        }
+       
+        .menu{
+            background-color: black;
+            width: 20%;
+            height: 150px;
+            position: relative;
+            float: left;
+            padding-top: 15px;
+            transform: skewX(-15deg);
+            margin: 10px auto;
+            color: white;
+            transition: all 0.3s;
+            margin: auto;
+        }
+        
+        .item1{
+            background-color: rgb(63, 63, 185);
+        }
+        .item1:hover{
+            cursor: pointer;
+            transform: skewX(-15deg) translateY(-60px) translateX(1px);
+        }
+        .item2{
+            background-color: rgb(161, 63, 185);
+        }
+        .item2:hover{
+            cursor: pointer;
+            transform: skewX(-15deg) translateY(-60px) translateX(1px);
+        }
+        .item3{
+            background-color: rgb(179, 192, 64);
+        }
+        .item3:hover{
+            cursor: pointer;
+            transform: skewX(-15deg) translateY(-60px) translateX(1px);
+        }
+        .item4{
+            background-color: rgb(185, 63, 63);
+        }
+        .item4:hover{
+            cursor: pointer;
+            transform: skewX(-15deg) translateY(-60px) translateX(1px);
+        }
+        .item5{
+            background-color: rgb(73, 158, 52);
+        }
+        .item5:hover{
+            cursor: pointer;
+            transform: skewX(-15deg) translateY(-60px) translateX(1px);
+        }
+        .caixapreta{
+            width: 90%;
+            height: 70px;            position: fixed;
+            bottom: -20px;
+            left: 0;
+            right: 0;            
+        }
+        
+    </style>
+</head>
+<body>
+    
+    <div>
+        <h1>Menu Diagonal em CSS</h1>
+        <img src="../html css/aula06/ex003/imagens/logo-css.png" alt="">
+
+    </div>  
+    <div class="caixapreta">
+        <div class="menu item1">Item 1</div>
+        <div class="menu item2">Item 2</div>
+        <div class="menu item3">Item 3</div>
+        <div class="menu item4">Item 4</div>
+        <div class="menu item5">Item 5</div> 
+    </div>
+    
+       
+   
+
+    
+</body>
+</html>

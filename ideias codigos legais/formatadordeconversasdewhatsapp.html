@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   
+</head>
+<body>
+    <style>
+        .texto{
+            background-color: bisque;
+        }
+        .saida, .texto{
+            width: 70%;
+            height: 20em;
+            border: solid 1px silver;
+        }
+        span{
+            font-weight: bold;
+        }
+    </style>
+    <textarea name="texto" id="texto" class="texto" cols="100" rows="20" placeholder="Sua conversa aqui... "></textarea>
+ 
+    <div class="saida" id="saida">
+        
+    </div>
+    
+    
+    <script>
+        (function(){
+            var $texto = document.querySelector('.texto');
+            var $saida = document.querySelector('.saida');
+            
+
+            $texto.addEventListener('change', formataTexto);
+            
+
+            function formataTexto(){          
+                //$texto.textContent = 'Ah: pronto \n um: texto \n com: quabra de linha...'
+                var linhas = $texto.value.split('\n');
+                for (i in linhas){
+                    var linhaSeparada = linhas[i].split(':');
+                    //debugger
+                    $saida.innerHTML += `<p>
+                        <strong>${linhaSeparada[0]+':'+linhaSeparada[1]}: </strong>${linhaSeparada[2]}
+                    </p>`;
+                }
+                copialinha($saida.innerHTML);
+                
+            }
+
+            function copialinha(str){
+                function observador(e){
+                    e.clipboardData.setData('text/html', str);
+                    e.clipboardData.setData('text/plain', str);
+                    e.preventDefault();
+                }
+                document.addEventListener('copy', observador);
+                document.execCommand('copy');
+                document.removeEventListener('copy', observador);    
+            }
+        //console.log(linhas);
+        })();
+    </script>
+
+</body>
+</html>

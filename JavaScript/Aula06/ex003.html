@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Primeiro Programa</title>
+    <style>
+        body{
+            background-color: #7878c0; /* comentário em css */
+            color: #ffffff;
+            font: normal 18pt arial;
+        }
+        h1{
+            color: #fff23e;
+        }
+    </style>
+</head>
+<body>
+    <h1>Ola Mundo!!</h1> <!-- esse é comentário-->
+    <p>Já me livrei da maldição</p>
+    <script>
+        /*
+        var n1 = window.prompt("Digite um numero"); //string
+        var n2 = window.prompt("Digite outro numero"); // string
+        var s = n1 + n2;
+        window.alert("A Soma de N1 e  N2 é "+ s);
+        // resultado vai ser 42
+        // + pode ser adição e pode ser concatenação também. 
+        // para a soma funcionar, ambas variáveis tem de ser do tipo Number
+        // o window.prompt sempre retorna uma string
+        */ 
+        var n1 = Number(window.prompt("Digite um numero."));
+        var n2 = Number(window.prompt("Digite o segundo numero"));
+        var s = n1 + n2;
+        //window.alert('A soma dos valors é ' + String(s)); versão com concatenação
+        // versão com PlaceHolders
+        window.alert(`O valor de ${n1} + ${n2} é ${s}`);
+    </script>
+</body>
+</html>

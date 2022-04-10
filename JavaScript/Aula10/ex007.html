@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 10 - Exercício 007</title>
+    <style>
+        body{ 
+            font: normal 12pt arial;
+        }
+        input {
+            font: normal 10pt;
+            width: 130px;
+            height: 20px;
+            padding: 2px;
+            margin: 5px;
+        }
+        div#rstd{
+            margin-top: 25px;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <H1>Somando Valores</H1>
+    <input type="number" name="txtn1" id="txtn1">
+    <input type="number" name="txtn2" id="txtn2"> <br />
+    <input type="button" value="Somar" onclick="soma()">
+    <div id="rstd">Resultado</div>
+    <script>
+        function soma(){
+            var vlr1 = document.getElementById('txtn1')
+            var vlr2 = document.getElementById('txtn2')
+            /*
+            n1 = Number(vlr1.value)
+            n2 = Number(vlr2.value)
+            document.write(`Resultado: ${n1} + ${n2}`)
+            */
+            var soma = Number(vlr1.value) + Number(vlr2.value)
+            rstd.innerHTML = `Resultado: ${soma}`
+            rstd.style.backgroundColor = '#FFFFB6'
+            //document.write(`Resultado: ${soma}`)
+        }
+    </script>
+</body>
+</html>

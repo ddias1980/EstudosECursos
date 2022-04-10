@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 009 - Exercício 05</title>
+    <style>
+        body{
+            background-color: #dfcdff;
+            font: normal 12pt arial;
+            color: #2e2e2e;
+        }
+        h1{
+            color: darkmagenta;
+        }
+    </style>
+</head>
+<body>
+    <h1>Titulo</h1>
+    <p>Aqui é um parágrafo onde vai o resultado </p>
+    <p>Aprendendo a usar <strong>o DOM</strong> em Javascript</p>
+    <div id="txt">Clica aqui....</div>
+    <script>
+        var par = window.document.getElementById('txt')
+        /*
+        document.write(`Nesse parágrafo está escrito assim: ${par.innerHTML}`)
+        par.style.backgroundColor = 'green'
+        par.innerText = 'Uauuuuu '
+        */ 
+        // msg = window.document.getElementById('txt').innerText = 'cliquei...'
+
+        mensagem = window.document.getElementById('txt')
+        document.write(mensagem.innerText)
+        mensagem.innerText = 'uia.... '
+
+        
+    </script>
+</body>
+</html>

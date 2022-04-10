@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <title>Capitulo 09 - Parte 1</title>
+</head>
+<body>
+    <h1>Listas OL e UL</h1>
+    <h2>Listas Ordenadas</h2>
+    <ol type="i " start="1">
+        <li>acordar</li>
+        <li>tomar cafe</li>
+        <li>escovar os dentes
+        <li>lavar roupa
+        <li>ligar pro joao
+        <li>ir para o trabalho</li>
+        <li>ir pra casas</li>
+        <li>jantar</li>
+        <li>dormir</li>
+    </ol>
+    <p>usei essas listas sem o /li, deixou de ser obrigatório no HTML 5</p>
+    
+    <p>listas ordenadas podem ser configuradas com o type</p>
+    <pre>
+        <code>
+            &lt;ol&gt; type="1" start="2"
+        </code>
+    </pre>
+    <p>Tipos de ordenações possíveis</p>
+    <ul>
+        <li>1 = numeros</li>
+        <li>A = Letras maiusculas</li>
+        <li>a = letras minusculas</li>
+        <li>i = romanos minusculas</li>
+        <li>I romanos maiusculas</li>
+    </ul>
+    <h2>Listar Não Ordenadas</h2>
+    <ul type="square">
+        <li>Pão</li>
+        <li>Leite</li>
+        <li>manteiga</li>
+        <li>arroz</li>
+        <li>feijão</li>
+    </ul>
+    <p>Listas não ordenadas podem ser usadas com os seguintes tipos</p>
+    <ul>
+        <li>disc (o padrão)</li>
+        <li>circle</li>
+        <li>square</li>
+    </ul>
+    código usado
+    <code>&lt;ul type="square"&gt;</code>
+    <h1>Capitulo 09 - Parte 2</h1>
+    <h2>Junção de listas</h2>
+    <p>Ex.:</p>
+    <ol>
+        <li>Antigas</li>
+        <ol type="a">
+            <li>Clipper</li>
+            <li>fortram</li>
+            <li>Delphi</li>
+            <li>VB</li>
+        </ol>
+        <li>Novas</li>
+        <ol type="I">
+            <li>PHP</li>
+            <li>JavasCript</li>
+            <li>Kothlin</li>
+        </ol>
+    </ol>
+    <h2>Meus jogos favoritos</h2>
+    <ul>
+        <li>SNES</li>
+        <ol>
+            <li>Donkey Kong Country</li>
+            <li>Super Metroid</li>
+        </ol>
+        <li>PS2</li>
+        <ol>
+            <li>Prince Of Persia</li>
+            <li>Silent Hill 4</li>
+            <li>Castlevania Lamment of Innocet</li>
+        </ol>
+        <li>NES</li>
+        <ol>
+            <li>Rockaman</li>
+            <li>Castlevania 1</li>
+        </ol>
+        <li>PS3 / PS4</li>
+        <ol>
+            <li>The Last Of us</li>
+            <li>Death Strading</li>
+            <li>Horizon Zero Dawn</li>
+        </ol>
+    </ul>
+
+    <h3>Listas de Definições</h3>
+    <dl>
+        <dt>HTML</dt>
+        <dd>Linguagem de marcação para a criação e conteúdo de um site</dd>
+        <dt>CSS</dt>
+        <dd>Linguagem de marcação para design de um site</dd>
+        <dt>JavaScript</dt>
+        <dd>Linguagem de programação para a criação de interatividade com um site.</dd>
+    </dl>
+    <p>Listas de definições foram usados em cima</p>
+    <p>É preciso usar as TAG DL (definition list) para abrir as listas e alternar as listas entre DT (assunto da esquerda) com DD (definição à direita</p>
+    <p>Ex:</p>
+    <pre>
+        <code>
+            &lt;dl&gt;
+                &lt;dt&gt;HTML&lt;/dt&gt;
+                &lt;dd&gt;Linguagem de marcação para a criação e conteúdo de um site&lt;/dd&gt;
+                &lt;dt&gt;CSS&lt;/dt&gt;
+                &lt;dd&gt;Linguagem de marcação para design de um site&lt;/dd&gt;
+                &lt;dt&gt;JavasCript&lt;/dt&gt;
+                &lt;dd&gt;Linguagem de programação para a criação de interatividade com um site.&lt;/dd&gt;
+            &lt;/dl&gt;
+        </code>
+    </pre>
+</body>
+</html>

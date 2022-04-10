@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seção 05 :: Exercício</title>
+    <style>
+        body{
+            background-color: #009a00;
+            font: normal 12pt arial;
+            color: white;
+            text-align: center;
+        }
+        code {
+            display: block;
+            height: 300px;
+            width: 600px;
+            border: solid 1px whitesmoke;
+            background-color: #ffffa7;
+            margin: auto;
+            color: #808080;
+            text-align: left;
+            line-height: 25px;
+            padding: 5px;
+        }
+        input[type="number"]{
+            height: 35px;
+            border: solid 1px yellow;
+            border-radius: 8px;
+        }
+        input[type="button"]{
+            height: 40px;
+            width: 70px;
+        }
+        .resultados {
+            
+            background-color: rgba(255,255,255,0.5);
+            width: 600px;
+            border: solid 1px black;
+            padding: 5px;
+            text-align: left;
+            margin: auto;
+            color: black;
+            margin-top: 10px;
+        }
+    </style>
+   
+</head>
+<body>
+    <h1>Seção 5 - Exercício</h1>
+    <h2>Exercício</h2>
+    <h3>Escopo:</h3>
+    <p>
+        Uma função que recebe quantos parametros forem necessários e calcule a média
+    </p>
+   <pre>
+       <code>
+    function media(xxx){
+        var contagem = 0;
+        var soma = 0;
+        while (arguments[contagem]){
+            soma += arguments[contagem];
+            contagem++;
+        }
+        var results = soma / arguments.length;
+        console.log(results);
+    }
+       </code>
+   </pre>
+   <input type="number" id="valores">
+   <input type="button" value="Salva" id="btnok">
+   <div id="resposta"> </div>
+<script>
+    var btnok = document.getElementById('btnok');
+    var valores = document.getElementById('valores');
+    var divnova = document.getElementById('resposta');
+    btnok.addEventListener('click', salvaValores);
+    var valoresSalvos = [];
+    valores.focus();
+
+    function salvaValores(){
+       valoresSalvos.push(valores.value);
+       divnova.classList.add('resultados');
+       divnova.innerHTML = `<strong>Valores Digitados: </strong>${valoresSalvos}<br /><strong>Media: </strong> ${media.apply(null,valoresSalvos)} `;
+       valores.value = '';
+       valores.focus();
+
+    }
+
+    function media(xxx){
+        var contagem = 0;
+        var soma = 0;
+        // media = soma dos arguments / quantidade de arguments
+        while (arguments[contagem]){
+            soma += arguments[contagem];
+            contagem++;
+        }
+        var results = soma / arguments.length;
+        return results;
+    }
+    //media(20,30,10,40);
+</script>
+    
+</body>
+</html>

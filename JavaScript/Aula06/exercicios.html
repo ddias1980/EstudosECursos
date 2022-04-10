@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 06 :: Exercicios do David</title>
+    <style>
+        body {
+            background: cornsilk;
+            font: normal 10pt arial;
+            color: rgb(54, 54, 54);
+        }
+    </style>
+</head>
+<body>
+    <h1>Entrada de Produtos</h1>
+    <script>
+        //coleta de valores nas variaveis 
+        nome = (window.prompt("Nome do produto").toUpperCase())
+        pn = (window.prompt("PN do produto").toUpperCase())
+        preco = Number((window.prompt("Preço do Produto")))
+        // Entrada dos valores na tela. 
+        document.write(`<strong>Adicionado</strong>:<br /> <strong>Produto: </strong>${nome} - <strong>PN: </strong> ${pn} - <strong>Preço: </strong> ${preco.toLocaleString('pt-BR', {style:'currency', currency:'BRL'})}`)
+    </script>
+</body>
+</html>

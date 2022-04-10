@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+    Formatação de tabelas em CSS
+    </title>
+    <link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;500;700;800&display=swap" rel="stylesheet">
+
+<style>
+    *{margin: 0; padding: 0;}
+
+    body {
+        color: white;
+        background-color: rgb(131, 131, 131);
+        font: normal 12pt 'Maven Pro', sans-serif;
+     
+    }
+    .content{
+        
+        margin: 20px;
+        border: solid 1px silver;
+        padding: 15px;
+        position: flex;
+        
+    }
+    h1{
+        margin-bottom: 5pt;
+        font-size: 20pt;
+    }
+    h2{
+        margin-bottom: 16pt;
+        font-size: 16pt;
+    }
+    p{
+        font-weight: lighter;
+        margin: 20pt 0pt;
+    }
+    input{
+        margin-bottom: 5px;
+        padding: 5px 3px;
+        height: 18pt;
+        background-color: rgba(255, 255, 255, 0.8);
+        border: none;
+    }
+    input[type=button]{
+        display: block;
+        width: 20%;
+        padding: 5px 3px;
+        height: 30px;
+        background-color: #ffffff;
+    }
+    input#inputId{
+        width: 15%;
+    }
+    input#inputProduto{
+        width: 30%;
+    }
+    input#inputQtde{
+        width: 10%;
+    }
+    input#inputPreco{
+        width: 19%;
+    }
+    table{
+        width: 80%;
+        border-collapse: collapse;
+    }
+    table thead{
+        border: 1px solid #fff;
+        background-color: rgb(46, 139, 87);
+    }
+    table thead th{
+        text-align: left;
+        padding: 5px;
+        height: 30px;
+    }
+    table tbody tr{
+        border-bottom: 1px solid #fff;
+        padding: 5px;
+        height: 30px;
+    }
+    table tbody tr:hover{
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+    table tfoot tr{
+        border-top: 2px solid white;
+        font-weight: bold;
+        height: 30px;
+       
+    }
+    table tfoot tr td{
+        font-size: 14pt;
+        padding-top: 5x;
+    }
+</style>
+
+</head>
+<body>
+    <div class="content">
+    <h1>Formatação de tabelas em CSS</h1>
+    <h2>E um pouco de javascript.</h2>
+    <p>Seguindo abaixo uma tabela formatada em um fundo de foto!!</p>
+
+    <input type="text" name="inputId" id="inputId" placeholder="ID">
+    <input type="text" name="inputProduto" id="inputProduto" placeholder="Produto">
+    <input type="number" name="inputQtde" id="inputQtde" placeholder="Qtde">
+    <input type="number" name="inputPreco" id="inputPreco" placeholder="Preço">
+    <input type="button" value="Cadastra" id="btnok">
+
+
+    <table class="tabela">
+        <thead>
+            <tr class="tabela-cabecalho">
+                <th>ID</th>
+                <th>Produto</th>
+                <th>Qtde</th>
+                <th>Preço</th>
+                <th>Total</th>
+            </tr>
+        </thead>
+        <tbody class="tbody">
+            <tr class="tlinha">
+                
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="4">Total</td>
+                <td>R$ -</td>
+            </tr>
+        </tfoot>
+    </table>
+    </div>
+    <script>
+        (function(){
+            var inputId = document.getElementById('inputId');
+            inputId.disabled = 'true';
+            var inputProduto = document.getElementById('inputProduto');
+            var inputQtde = document.getElementById('inputQtde');
+            var inputPreco = document.getElementById('inputPreco');
+
+            document.getElementById('btnok').addEventListener('click', cadastraUsuario);
+
+            
+            var percorreTR = document.querySelectorAll('.tlinha');
+            var btr = percorreTR[0];
+            //console.log(btr)
+            
+            var percorreTD = btr.querySelectorAll('td')
+            var btd = percorreTD[0];
+            //console.log(btd);
+
+           function cadastraUsuario(){
+               insereDados(inputId,inputProduto,inputQtde,inputPreco);
+           }
+            var totaisGerais = 0;
+           function insereDados(id,prod,qtd,preco){
+               var tbody = document.querySelector('table .tbody'); 
+               var tblinha = tbody.rows.length;
+               var addlinha = tbody.insertRow(tblinha);
+               addlinha.className = 'tlinha';
+               
+               
+               var tdId = addlinha.insertCell(0);
+               var tdProd = addlinha.insertCell(1);
+               var tdQtde = addlinha.insertCell(2);
+               var tdPreco = addlinha.insertCell(3);
+               var tdTotal = addlinha.insertCell(4);
+               var tdPrecoTotal = (Number(qtd.value) * Number(preco.value))
+
+               tdId.innerHTML = tblinha;
+               tdProd.textContent = prod.value;
+               tdQtde.innerHTML = qtd.value;
+               tdPreco.innerHTML = preco.value;
+               tdTotal.innerHTML = tdPrecoTotal.toFixed(2);
+            
+               totaisGerais += parseInt(tdPrecoTotal);
+               var tdTotalGeral = document.querySelectorAll('tfoot tr td');
+               tdTotalGeral[1].innerHTML = totaisGerais.toFixed(2);
+               
+               
+           }
+           function somaTudo(){
+               var linhaTotais = document.querySelectorAll('.tlinha');
+               for (i in linhaTotais){
+                    console.log(linhaTotais[i]);
+                    var total = document.querySelectorAll('.tlinha td');
+                    console.log(total[4]);
+                }
+           }
+            
+           
+        })();
+    </script>
+</body>
+</html>

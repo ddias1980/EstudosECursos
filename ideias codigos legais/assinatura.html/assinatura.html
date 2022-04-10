@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        * {padding: 0; margin: 0;}
+        body{
+            font: normal 12pt "arial narrow";
+        }
+        .container{
+            width: 490px;
+            height: 200px;
+            position: fixed;
+            display: inline-block;
+            margin: 10px 0 0 10px;
+        }
+        .esquerdo {
+            position: relative;
+            width: 210px;
+            float: left;
+        }
+        .header {
+            position: relative;
+            line-height: 1.5em;
+            
+        }
+        .dados {
+            position: relative;
+            margin: 15px 0px 15px;
+            
+        }
+        .dados .titulo {
+            position: relative;
+            line-height: 1.5em;
+        }
+        .endereco {
+            position: relative;
+            margin-top: 5px;
+            
+        }
+        .bonito {
+            position: relative;
+            float: left;  
+        }
+        .nome {
+            color: #aa0000;
+            font-size: 22pt;
+            font-weight: bolder;
+            margin-top: 10px;
+            text-transform: capitalize;
+        }
+        .cargo {
+            color: #353535;
+            font-size: 12pt;
+            font-weight: bold;
+            text-transform: capitalize;
+        }
+        .titulo {
+            display: inline-block;
+            width: 25px;
+            font-size: 12pt;
+        }
+        .tit-dados {
+            display: inline-block;
+            font-weight: bold;
+            text-transform: lowercase;
+        }
+        .red{
+            font-weight: bold;
+            color: #aa0000;
+        }
+        .end {
+            font-size: 10pt;
+        }
+        img {
+            width: 230px;
+        }
+
+    </style>
+    <section>
+    <div class="container">
+        <div class="esquerdo">
+            <div class="header">
+                <p class="nome">
+                    David Dias
+                </p>
+                <p class="cargo">Diretor</p>
+
+            </div>
+            <div class="dados">
+                <p><span class="titulo"> &#x1F4DE; </span><span class="tit-dados">(15) 97402-5114</span></p>
+                <p><span class="titulo">&#x1F4E8; </span><span class="tit-dados">David@inforpro.com.br</span></p>
+            </div>
+            <div class="endereco">
+                <p class="end red">BANDEIRAS CENTRO EMPRESARIAL</p>
+                <p class="end">Av. Ireno da Silva Venâncio, 199</p>
+                <p class="end">GP06 UN60, Votorantim - SP</p>
+            </div>
+        </div>
+        <div class="bonito">
+            <img src="ipcaixa.png" alt="">
+        </div>
+    </div>
+</section>
+</body>
+</html>

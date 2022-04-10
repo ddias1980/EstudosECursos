@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InforPró Servidores</title>
+    <link rel="stylesheet" href="css/style.css">
+    
+</head>
+<body>
+    <header>
+        <img class="logo" src="img/logo-cabecalho.png" alt="inforpro">
+        <ul>
+            <li><a href="#">Produtos</a></li>
+            <li><a href="#">Estoque</a>
+                <ul>
+                    <li><a href="#">Dar Entrada</a></li>
+                    <li><a href="#">Status de Produtos</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Cadastros</a>
+                <ul>
+                    <li><a href="#">Cadastrar Produtos</a></li>
+                    <li><a href="#">Cadastrar Fornecedores</a></li>
+                    <li><a href="#">Cadastrar Categorias</a></li>
+                    <li><a href="#">Cadastrar Partes de Produtos</a></li>
+                </ul>
+            </li>       
+            <li><a href="#">Configurações</a></li>
+        </ul>
+    </header>
+        <div id="menu-superior">
+            <div class="menucentro">
+                <input type="text" name="input-busca" id="input-busca" class="input-busca aolado" placeholder="Buscar">
+                <label class="aolado" for="em-estoque">Apenas em Estoque: </label>
+                <input type="checkbox" name="em-estoque" id="chk-em-estoque" class="chk-em-estoque aolado">
+                <div class="selecaomultipla aolado" id="selecaomultipla">
+                    <div class="selectbox" onclick="exibeCheckbox()">
+                        <select class="filtro-tipo" >
+                            <option selected hidden value="escolha">Filtrar...</option>
+                        </select>
+                        <!--<div class="overselect"></div>-->
+                        <div class="checkbox" id="checkbox">
+                            <label for="hd">
+                                <input type="checkbox" name="hd" id="hd" class="hd">HDD e SSD
+                            </label>
+                            <label for="memoria">
+                                <input type="checkbox" name="memoria" id="memoria" class="memoria">Memórias
+                            </label>
+                        </div><!--Checkbox-->
+                    </div> <!--selectbox-->
+                </div><!--selcaomultipla-->
+            </div><!--menucentro-->
+        </div> <!--menu-superior-->
+    <section>
+        <table id="tbl-produtos-estoque" class=tbl-produtos-estoque">
+            <tr>
+                <th>Sel.</th>
+                <th>Produto</th>
+                <th>PN</th>
+                <th>Valor Unitário</th>
+                <th>Qtde em Estoque</th>
+                <th>Categorias</th>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+            </tr>
+        </table>
+    </section>
+    <div id="status-bar">
+        <p>status bar</p>
+    </div>
+    
+    <script src="js/script.js"></script>
+</body>
+</html>

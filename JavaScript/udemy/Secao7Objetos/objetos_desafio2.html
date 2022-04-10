@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problema 1</title>
+</head>
+<body>
+    <h1>Seção 7 - Objetos</h1>
+    <h3>Desafio 2</h3>
+    <p>Usar um desafio anterior e melhorá-lo.</p>
+    <p>Dessa vez, usando <strong>Objetos</strong>. </p>
+    <hr>
+    <input type="text" id="nome" class="nome" placeholder="Nome">
+    <input type="text" id="sobrenome" class="sobrenome" placeholder="Sobrenome"> 
+    <input type="text" id="cidade" class="cidade" placeholder="Cidade">
+    <input type="button" value="Vai!" class="btnok" id="btnok">
+    <div class="txtresp" id="txtresp">
+
+    </div>
+
+    <script>
+        var Pessoa = [
+            nome,
+            sobrenome, 
+            cidade
+        ]
+
+        // vamos lá.. pegar as coisas. 
+        document.getElementById('btnok').addEventListener('click', escreveDados);
+        var iptNome = document.querySelector('#nome');
+        var iptSobrenome = document.querySelector('#sobrenome');
+        var iptCidade = document.querySelector('#cidade');
+        var divTxtResp = document.querySelector('#txtresp');
+
+        function escreveDados(){
+           Pessoa[0] = iptNome.value;
+           Pessoa[1] = iptSobrenome.value;
+           Pessoa[2] = iptCidade.value;
+        }
+        divTxtResp.innerHTML = `<p>Seja Bem vindo ${Pessoa[0]} ${Pessoa[1]}, Rei de ${Pessoa[2]}</p>`
+
+       
+    </script>
+</body>
+</html>
