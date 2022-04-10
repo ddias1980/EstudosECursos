@@ -1,0 +1,5 @@
+Criar Variáveis no SQL Server 
+declare nomedavariavel tipo
+Ex: 
+    declare test int
+    
